@@ -106,4 +106,11 @@ public interface OMEROService extends Service {
 		String name, Table<C, T> imageJTable) throws ServerError,
 		PermissionDeniedException, CannotCreateSessionException;
 
+	/**
+	 * Downloads the table with the given ID from OMERO, storing the result into a
+	 * new ImageJ {@link Table}.
+	 */
+	Table<?, ?> downloadTable(OMEROCredentials credentials, long tableID)
+		throws ServerError, PermissionDeniedException, CannotCreateSessionException;
+
 }
