@@ -482,7 +482,7 @@ public class DefaultOMEROService extends AbstractService implements
 	 * Generates an OMERO source string fragment with credentials matching the
 	 * given client.
 	 */
-	private String credentials(final omero.client client) {
+	private static String credentials(final omero.client client) {
 		return "server=" + client.getProperty("omero.host") + //
 			"&port=" + client.getProperty("omero.port") + //
 			"&sessionID=" + client.getSessionId();
@@ -568,7 +568,7 @@ public class DefaultOMEROService extends AbstractService implements
 	}
 
 	/** Converts a {@link Collection} to an array of the given type. */
-	private <T> T[] toArray(final Collection<Object> collection,
+	private static <T> T[] toArray(final Collection<Object> collection,
 		final Class<T> type)
 	{
 		final Object array = Array.newInstance(type, 0);
