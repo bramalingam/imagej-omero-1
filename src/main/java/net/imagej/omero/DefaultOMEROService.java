@@ -337,7 +337,7 @@ public class DefaultOMEROService extends AbstractService implements
 		// Will need to rethink how SCIFIO conveys source and destination metadata.
 		// The RandomAccessInput/OutputStream design is probably too narrow.
 		final String omeroDestination =
-			credentials(client) //
+			"omero:" + credentials(client) //
 				+ ".omero"; // FIXME: Remove this after SCIFIO doesn't need it anymore.
 
 		final Metadata metadata = datasetService.save(dataset, omeroDestination);
